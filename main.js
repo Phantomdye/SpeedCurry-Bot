@@ -1,7 +1,7 @@
-const Discord = require("discord.js")
-const bot			= new Discord.Client({disableEveryone: true})
-const config 	= require('./config.json')
-const embeds 	= require('./embeds.json')
+const Discord 		= require("discord.js")
+const bot					= new Discord.Client({disableEveryone: true})
+const config 			= require('./config.json')
+const colorconfig = require('./colorconfig.json')
 
 bot.on("ready", async () => {
 	console.log(`Logged in as ${bot.user.username}...`)
@@ -27,7 +27,7 @@ bot.on("message", async message => {
 	if (cmd === `${prefix}botinfo`) {
 		let botembed = new Discord.RichEmbed()
 		.setDescription("Bot Information")
-		.setColor(embeds.green)
+		.setColor("#2ecc71")
 		.addField("Bot Name: ", bot.user.username);
 
 		return message.channel.send(botembed);
