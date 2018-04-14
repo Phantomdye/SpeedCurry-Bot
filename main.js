@@ -8,7 +8,7 @@ bot.on("ready", async () => {
 	bot.user.setActivity('Hey! ::botinfo')
 });
 
-bot.on("message", async message => {
+bot.on("message", async (message, args) => {
 	if (message.author.bot) return
 	if (message.channel.type === "dm") return
 
@@ -28,10 +28,17 @@ bot.on("message", async message => {
 		let botembed = new Discord.RichEmbed()
 		.setDescription("Bot Information")
 		.setColor(colorconfig.green)
-		.addField(`Bot Name: ${bot.user.username}`);
+		.addField('Bot Name: ', bot.user.username);
 		return message.channel.send(botembed);
 	}
-
+//---------------Voting--------------------
+	if(cmd === `${prefix}vote`) {
+	let botembed = new Discord.RichEmbed()
+	.setDescription("Voting!")
+	.setColor(colorconfig.red)
+	//.addField('Vote on!', "Hier kommt noch was hin!")
+	.addField(reaction.message.channel.send(`:grey_question: Hier kommt noch was hin!:white_check_mark: :negative_squared_cross_mark:`))
+	}
 });
 
 bot.login(process.env.token)
