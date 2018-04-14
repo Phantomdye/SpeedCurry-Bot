@@ -28,8 +28,8 @@ bot.on("message", async (message) => {
 		let botembed = new Discord.RichEmbed()
 		.setDescription("Bot Information")
 		.setColor(colorconfig.green)
-		.addField('Bot Name: ', bot.user.username);
-		return message.channel.send(botembed);
+		.addField('Bot Name: ', bot.user.username)
+		return message.channel.send(botembed)
 	}
 //---------------Voting--------------------
 	if(cmd === `${prefix}vote`) {
@@ -38,6 +38,7 @@ bot.on("message", async (message) => {
 	.setColor(colorconfig.red)
 	//.addField('Vote on!', "Hier kommt noch was hin!")
 	.addField(reaction.message.channel.send(`:grey_question: Hier kommt noch was hin!:white_check_mark: :negative_squared_cross_mark:`))
+	return message.channel.send(botembed)
 	}
 });
 
