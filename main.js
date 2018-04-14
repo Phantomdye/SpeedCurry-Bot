@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const bot			= new Discord.Client({disableEveryone: true})
 const config 	= require('./config.json')
-const Embeds 	= require('./embed.json')
+const Embeds 	= require('./embed.js')
 
 bot.on("ready", async () => {
 	console.log(`Logged in as ${bot.user.username}...`)
