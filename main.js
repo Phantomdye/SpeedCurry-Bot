@@ -33,12 +33,8 @@ bot.on("message", async (message) => {
 	}
 //---------------Voting--------------------
 	if(cmd === `${prefix}vote`) {
-	let botembed = new Discord.RichEmbed()
-	.setDescription("Voting!")
-	.setColor(colorconfig.red)
-	//.addField('Vote on!', "Hier kommt noch was hin!")
-	.addField(reaction.message.channel.send(`:grey_question: Hier kommt noch was hin!:white_check_mark: :negative_squared_cross_mark:`))
-	return message.channel.send(botembed)
+	reaction.message.channel.send(`:grey_question: Hier kommt noch was hin!:white_check_mark: :negative_squared_cross_mark:`)
+
 	}
 });
 
