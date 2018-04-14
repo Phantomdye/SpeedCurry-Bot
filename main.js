@@ -4,7 +4,7 @@ const prefix 	= "::"
 
 bot.on("ready", async () => {
 	console.log(`Logged in as ${bot.user.username}...`)
-	bot.user.setActivity('Hey, whats up!')
+	bot.user.setActivity('Prefix: "::"')
 });
 
 bot.on("message", async message => {
