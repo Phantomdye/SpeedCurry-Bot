@@ -5,11 +5,7 @@ const Embeds 	= require('./embeds')
 
 bot.on("ready", async () => {
 	console.log(`Logged in as ${bot.user.username}...`)
-<<<<<<< HEAD
 	bot.user.setActivity('Hey! ::botinfo')
-=======
-	bot.user.setActivity('Prefix: "::"')
->>>>>>> fe8eb54d193cccc69b5ba21e6d36cd9480655ebf
 });
 
 bot.on("message", async message => {
