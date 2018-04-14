@@ -1,6 +1,7 @@
 const Discord 	= require("discord.js")
-const bot 		= new Discord.Client({disableEveryone: true})
+const bot		= new Discord.Client({disableEveryone: true})
 const prefix 	= "::"
+const Embeds 	= require('./embeds')
 
 bot.on("ready", async () => {
 	console.log(`Logged in as ${bot.user.username}...`)
@@ -8,6 +9,11 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async message => {
+	var cont = msg.cont,
+		author = msg.member,
+		chan = msg.channel,
+		guild = msg.guild
+	
 	if (message.author.bot) return
 	if (message.channel.type === "dm") return
 	
