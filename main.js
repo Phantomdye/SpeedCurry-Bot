@@ -27,9 +27,8 @@ bot.on("message", async message => {
 	if (cmd === `${prefix}botinfo`) {
 		let botembed = new Discord.RichEmbed()
 		.setDescription("Bot Information")
-		.setColor("#2ecc71")
-		.addField("Bot Name: ", bot.user.username);
-
+		.setColor(colorconfig.green)
+		.addField(`Bot Name: ${bot.user.username}`);
 		return message.channel.send(botembed);
 	}
 
