@@ -33,7 +33,7 @@ bot.on("message", async (message) => {
 	}
 //---------------Voting--------------------
 	if(cmd === `${prefix}vote`) {
-	reaction.message.channel.send(`:grey_question: Hier kommt noch was hin!:white_check_mark: :negative_squared_cross_mark:`)
+	reaction.message.channel.send(`The emoji used is ${reaction.emoji}`)
 
 	}
 });
