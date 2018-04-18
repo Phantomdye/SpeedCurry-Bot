@@ -2,7 +2,7 @@ const Discord 		= require("discord.js")
 const bot			= new Discord.Client({disableEveryone: true})
 const config 		= require('./config.json')
 const colorconfig 	= require('./colorconfig.json')
-const helptext 		= require('.helptext.json')
+const helptext 		= require('./helptext.json')
 
 bot.on("ready", async () => {
 	//If bot started message(only Logs)
