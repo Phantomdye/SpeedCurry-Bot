@@ -7,7 +7,7 @@ const helptext 		= require('.helptext.json')
 bot.on("ready", async () => {
 	//If bot started message(only Logs)
 	console.log(`Logged in as ${bot.user.username}...`)
-	bot.user.setActivity('Hey! ::botinfo')
+	bot.user.setActivity('Hey! v0.0.3')
 });
 
 bot.on("message", async (message) => {
