@@ -7,7 +7,7 @@ const helptext 		= require('./helptext.json')
 bot.on("ready", async () => {
 	//If bot started message(only Logs)
 	console.log(`Logged in as ${bot.user.username}...`)
-	bot.user.setActivity('Hey! v0.0.3')
+	bot.user.setActivity(`Hey! v${config.version}`)
 });
 
 bot.on("message", async (message) => {
@@ -37,12 +37,13 @@ bot.on("message", async (message) => {
 		let botembed = new Discord.RichEmbed()
 		.setDescription("Bot-Help")
 		.setColor(colorconfig.purple)
-		.addField(`${helptext.helptxt1}`)
-		.addField(`${helptext.helptxt2}`)
-		.addField(`${helptext.helptxt3}`)
-		.addField(`${helptext.helptxt4}`)
+		.addField(`${helptext.helptxt1}`,"::help")
+		.addField(`${helptext.helptxt2}`,"::ping")
+		.addField(`${helptext.helptxt3}`,"::hello")
+		.addField(`${helptext.helptxt4}`,"::botinfo")
 		return message.channel.send(botembed)
 	}
 });
 
-bot.login(process.env.token)
+//bot.login(process.env.token)
+bot.login("MzkzODEzODY2OTE3OTIwNzcw.DbkE-g.D30Dm22Kb7jhFrdLpSVnM9CWbVQ")
