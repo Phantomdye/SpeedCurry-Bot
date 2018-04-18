@@ -1,3 +1,6 @@
 {
-    "helptxt": "Help Command:   ::help\nPing Command:   ::ping\nHello Command:   ::hello\nInfo Command:   ::botinfo"
+    "helptxt1": "Show this message:   ::help",
+    "helptxt2": "Ping Command:   ::ping",
+    "helptxt3": "Hello Command:   ::hello",
+    "helptxt4": "Info Command:   ::botinfo"
 }

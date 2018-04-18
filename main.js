@@ -37,7 +37,10 @@ bot.on("message", async (message) => {
 		let botembed = new Discord.RichEmbed()
 		.setDescription("Bot-Help")
 		.setColor(colorconfig.purple)
-		.addField(`${helptext.helptxt}`)
+		.addField(`${helptext.helptxt1}`)
+		.addField(`${helptext.helptxt2}`)
+		.addField(`${helptext.helptxt3}`)
+		.addField(`${helptext.helptxt4}`)
 		return message.channel.send(botembed)
 	}
 });
