@@ -1,9 +1,11 @@
 const Discord 		= require("discord.js")
-const bot					= new Discord.Client({disableEveryone: true})
-const config 			= require('./config.json')
-const colorconfig = require('./colorconfig.json')
+const bot			= new Discord.Client({disableEveryone: true})
+const config 		= require('./config.json')
+const colorconfig 	= require('./colorconfig.json')
+const helptext 		= require('.helptext.json')
 
 bot.on("ready", async () => {
+	//If bot started message(only Logs)
 	console.log(`Logged in as ${bot.user.username}...`)
 	bot.user.setActivity('Hey! ::botinfo')
 });
@@ -31,10 +33,12 @@ bot.on("message", async (message) => {
 		.addField('Bot Name: ', bot.user.username)
 		return message.channel.send(botembed)
 	}
-//---------------Voting--------------------
-	if(cmd === `${prefix}vote`) {
-	reaction.message.channel.send(`The emoji used is ${reaction.emoji}`)
-
+	if (cmd === `${prefix}help`) {
+		let botembed = new Discord.RichEmbed()
+		.setDescription("Bot-Help")
+		.setColor(colorconfig.purple)
+		.addField(`${helptext.helptxt}`)
+		return message.channel.send(botembed)
 	}
 });
 
