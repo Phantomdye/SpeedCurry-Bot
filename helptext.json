@@ -1,6 +1,6 @@
 {
-    "helptxt1": "Show this message:",
-    "helptxt2": "Ping Command:",
-    "helptxt3": "Hello Command:",
-    "helptxt4": "Info Command:"
+    "h1": "Show this message:",
+    "h2": "Ping Command:",
+    "h3": "Hello Command:",
+    "h4": "Info Command:"
 }
