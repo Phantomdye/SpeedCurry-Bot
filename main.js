@@ -1,49 +1,18 @@
-const Discord 		= require("discord.js")
-const bot			= new Discord.Client({disableEveryone: true})
-const config 		= require('./config.json')
-const colorconfig 	= require('./colorconfig.json')
-const helptext 		= require('./helptext.json')
+const Discord   = require('discord.js')
 
-bot.on("ready", async () => {
-	//If bot started message(only Logs)
-	console.log(`Logged in as ${bot.user.username}...`)
-	bot.user.setActivity(`Hey! v${config.version}`)
-});
+const config    = require('./config.json')
 
-bot.on("message", async (message) => {
-	if (message.author.bot) return
-	if (message.channel.type === "dm") return
+var client = new Discord.Client()
 
-	let prefix = config.prefix
-	let messageArray = message.content.split(" ")
-	let cmd = messageArray[0]
-	let args = messageArray.slice(1)
+client.on('ready', () => {
+    console.log(`${client.user.name} is now loaded...`)
+})
 
-//Commands
-	if (cmd === `${prefix}ping`) {
-		message.channel.send("Pong!")
-	}
-	if (cmd === `${prefix}hello`) {
-		message.channel.send("Hey!")
-	}
-	if (cmd === `${prefix}botinfo`) {
-		let botembed = new Discord.RichEmbed()
-		.setDescription("Bot Information")
-		.setColor(colorconfig.green)
-		.addField('Bot Name: ', bot.user.username)
-		return message.channel.send(botembed)
-	}
-	if (cmd === `${prefix}help`) {
-		let botembed = new Discord.RichEmbed()
-		.setDescription("Bot-Help")
-		.setColor(colorconfig.purple)
-		.addField(`${helptext.helptxt1}`,"::help")
-		.addField(`${helptext.helptxt2}`,"::ping")
-		.addField(`${helptext.helptxt3}`,"::hello")
-		.addField(`${helptext.helptxt4}`,"::botinfo")
-		return message.channel.send(botembed)
-	}
-});
+client.on('message', (msg) => {
 
-//bot.login(process.env.token)
-bot.login("MzkzODEzODY2OTE3OTIwNzcw.DbkE-g.D30Dm22Kb7jhFrdLpSVnM9CWbVQ")
+    var cont = msg.content,
+        author = msg.member
+
+})
+
+client.login(process.env.token)
