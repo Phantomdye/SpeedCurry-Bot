@@ -3,6 +3,7 @@ const config    = require('./config.json')
 const embeds    = require('./embed.js')
 const helptxt   = require('./helptext.json')
 const COLORS    = require('./colorconfig.json')
+const db = require('quick.db')
 
 var client = new Discord.Client()
 var prefix = config.prefix
@@ -14,8 +15,10 @@ client.on('ready', () => {
 var cmdmap = {
     say: cmd_say,
     ping: cmd_ping,
-    //test: cmd_test,
-    help: cmd_help
+    hello: cmd_hello,
+    help: cmd_help,
+    botinfo: cmd_botinfo,
+    banmax: cmd_banmax
 }
 
 function cmd_say(msg, args) {
@@ -24,9 +27,8 @@ function cmd_say(msg, args) {
 function cmd_ping(msg, args) {
     msg.channel.send('Pong!')
 }
-function cmd_test(msg, args) {
-    //embeds.error(msg.channel, 'This is a test!', 'Not an error')
-    embeds.info(msg.channel, "This is a content.")
+function cmd_hello(msg, args) {
+    msg.channel.send("Hey!")
 }
 function cmd_help(msg, args) {
     let embed = new Discord.RichEmbed()
@@ -38,9 +40,27 @@ function cmd_help(msg, args) {
     .addField(`${helptxt.h4}`,"::botinfo")
     return msg.channel.send(embed)
 }
+function cmd_botinfo(msg, args) {
+    let botembed = new Discord.RichEmbed()
+	.setDescription("Bot Information")
+	.setColor(colorconfig.green)
+	.addField('Bot Name: ', bot.user.username)
+    return message.channel.send(botembed)
+}
 
 client.on('message', (msg) => {
-
+    if (message.content.startsWith("/kickmax")) {
+        // Easy way to get member object though mentions.
+        var member= message.mentions.members.first();
+        // Kick
+        member.kick().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+        });
+    }
     var cont = msg.content,
         author = msg.member
 
@@ -52,5 +72,6 @@ client.on('message', (msg) => {
             }
         }
 })
+
 
 client.login(process.env.token)
