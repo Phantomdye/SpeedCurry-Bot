@@ -3,7 +3,6 @@ const config    = require('./config.json')
 const embeds    = require('./embed.js')
 const helptxt   = require('./helptext.json')
 const COLORS    = require('./colorconfig.json')
-const db = require('quick.db')
 
 var client = new Discord.Client()
 var prefix = config.prefix
