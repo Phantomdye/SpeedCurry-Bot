@@ -16,8 +16,7 @@ var cmdmap = {
     ping: cmd_ping,
     hello: cmd_hello,
     help: cmd_help,
-    botinfo: cmd_botinfo,
-    banmax: cmd_banmax
+    botinfo: cmd_botinfo
 }
 
 function cmd_say(msg, args) {
